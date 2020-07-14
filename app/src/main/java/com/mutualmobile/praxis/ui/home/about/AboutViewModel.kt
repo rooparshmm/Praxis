@@ -1,7 +1,10 @@
 package com.mutualmobile.praxis.ui.home.about
 
-import com.mutualmobile.praxis.injection.scope.ActivityScope
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.SavedStateHandle
 import com.mutualmobile.praxis.ui.base.BaseViewModel
-import javax.inject.Inject
 
-class AboutViewModel @Inject constructor() : BaseViewModel()
+class AboutViewModel @ViewModelInject constructor(
+  @Assisted private val savedStateHandle: SavedStateHandle
+) : BaseViewModel()

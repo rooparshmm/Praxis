@@ -6,7 +6,9 @@ import com.mutualmobile.praxis.data.model.Joke
 import com.mutualmobile.praxis.databinding.ActivityShowjokeBinding
 import com.mutualmobile.praxis.ui.base.ActivityNavigator
 import com.mutualmobile.praxis.ui.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ShowJokeActivity : BaseActivity<ActivityShowjokeBinding, ShowJokeViewModel>() {
 
   companion object {

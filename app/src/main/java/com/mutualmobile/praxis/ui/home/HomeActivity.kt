@@ -5,12 +5,19 @@ import android.view.View
 import androidx.lifecycle.Observer
 import com.mutualmobile.praxis.R
 import com.mutualmobile.praxis.databinding.ActivityHomeBinding
+import com.mutualmobile.praxis.injection.module.SampleClass
 import com.mutualmobile.praxis.ui.base.ActivityNavigator
 import com.mutualmobile.praxis.ui.base.BaseActivity
-import com.mutualmobile.praxis.ui.home.about.AboutFragment
+import com.mutualmobile.praxis.ui.home.about.AboutDialogFragment
 import com.mutualmobile.praxis.ui.joke.ShowJokeActivity
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
+
+  @Inject lateinit var sampleClass: SampleClass
+
   override fun getViewModelClass(): Class<HomeViewModel> = HomeViewModel::class.java
 
   override fun layoutId(): Int = R.layout.activity_home
@@ -20,6 +27,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
     binding.randomJokesButtonCoroutine.setOnClickListener { viewModel.loadDataCoroutine() }
     binding.randomJokesButtonRx.setOnClickListener { viewModel.loadDataRx() }
     binding.aboutButton.setOnClickListener { showAboutFragment() }
+
+    //sampleClass.testMethod()
 
     viewModel.dataLoading.observe(this, Observer { handleDataLoadingUi(it!!) })
 
@@ -37,7 +46,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
   }
 
   private fun showAboutFragment() {
-    val fragment = AboutFragment.newInstance()
+    val fragment = AboutDialogFragment.newInstance()
     fragment.show(supportFragmentManager, "dialog")
   }
 
