@@ -4,6 +4,7 @@ object BuildPlugins {
   private const val TOOLS_BUILD = "4.0.0"
   private const val KT_LINT = "9.2.1"
   private const val SAFE_ARGS = "2.3.0"
+  private const val KOTLIN_DOKKA_VERSION = "1.4.20"
 
   const val TOOLS_BUILD_GRADLE =
     "com.android.tools.build:gradle:${TOOLS_BUILD}"
@@ -15,8 +16,12 @@ object BuildPlugins {
   const val ANDROID_LIBRARY_PLUGIN = "com.android.library"
   const val KOTLIN_ANDROID_PLUGIN = "kotlin-android"
   const val KOTLIN_ANDROID_EXTENSIONS_PLUGIN = "kotlin-android-extensions"
-  const val KOTLIN_KAPT = "kotlin-kapt"
+  const val KTLINT_PLUGIN = "org.jlleitschuh.gradle.ktlint"
+  const val DOKKA_PLUGIN = "org.jetbrains.dokka"
   const val SAFE_ARGS_PLUGIN = "androidx.navigation.safeargs.kotlin"
+
+  const val KOTLIN_KAPT = "kotlin-kapt"
+  const val KOTLIN_DOKKA = "org.jetbrains.dokka:dokka-gradle-plugin:${KOTLIN_DOKKA_VERSION}"
 }
 
 object Lib {

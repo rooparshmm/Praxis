@@ -5,7 +5,8 @@ plugins {
   id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
   id(BuildPlugins.KOTLIN_ANDROID_EXTENSIONS_PLUGIN)
   id(BuildPlugins.KOTLIN_KAPT)
-  id("org.jlleitschuh.gradle.ktlint")
+  id(BuildPlugins.KTLINT_PLUGIN)
+  id(BuildPlugins.DOKKA_PLUGIN)
 }
 
 subprojects {
