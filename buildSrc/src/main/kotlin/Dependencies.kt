@@ -91,6 +91,16 @@ object Lib {
     private const val TIMBER_VERSION = "4.7.1"
     const val TIMBER = "com.jakewharton.timber:timber:${TIMBER_VERSION}"
   }
+
+  object GraphQL {
+    private const val APOLLO_VERSION = "2.5.2"
+    const val APOLLO = "com.apollographql.apollo:apollo-gradle-plugin:${APOLLO_VERSION}"
+    const val APOLLO_PLUGINS = "com.apollographql.apollo"
+
+    const val APOLLO_RUNTIME = "com.apollographql.apollo:apollo-runtime:${APOLLO_VERSION}"
+    const val APOLLO_COROUTINE =
+      "com.apollographql.apollo:apollo-coroutines-support:${APOLLO_VERSION}"
+  }
 }
 
 object TestLib {

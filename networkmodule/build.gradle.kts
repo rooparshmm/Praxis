@@ -2,6 +2,7 @@ plugins {
   id(BuildPlugins.ANDROID_LIBRARY_PLUGIN)
   id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
   id(BuildPlugins.KOTLIN_PARCELABLE_PLUGIN)
+  id(Lib.GraphQL.APOLLO_PLUGINS)
 }
 
 android {
@@ -25,6 +26,15 @@ android {
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
   }
+
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+  }
+
+  apollo {
+    generateKotlinModels.set(true)
+  }
 }
 
 dependencies {
@@ -46,6 +56,10 @@ dependencies {
 
   //Rx
   implementation("com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar")
+
+  //GraphQL Apollo
+  implementation(Lib.GraphQL.APOLLO_COROUTINE)
+  implementation(Lib.GraphQL.APOLLO_RUNTIME)
 
 }
 repositories {

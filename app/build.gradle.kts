@@ -28,6 +28,7 @@ android {
     versionName = "1.0"
     testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     vectorDrawables.useSupportLibrary = true
+    multiDexEnabled = true
   }
 
   packagingOptions {
@@ -95,7 +96,6 @@ dependencies {
   api(Lib.Networking.LOGGING)
   implementation("com.google.code.gson:gson:2.8.6")
   implementation("com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar")
-
 
   /* Async */
   api(Lib.Async.COROUTINES)
