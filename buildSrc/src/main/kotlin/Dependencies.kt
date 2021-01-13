@@ -15,10 +15,9 @@ object BuildPlugins {
   const val ANDROID_APPLICATION_PLUGIN = "com.android.application"
   const val ANDROID_LIBRARY_PLUGIN = "com.android.library"
   const val KOTLIN_ANDROID_PLUGIN = "kotlin-android"
-  const val KOTLIN_ANDROID_EXTENSIONS_PLUGIN = "kotlin-android-extensions"
   const val KTLINT_PLUGIN = "org.jlleitschuh.gradle.ktlint"
   const val DOKKA_PLUGIN = "org.jetbrains.dokka"
-  const val SAFE_ARGS_PLUGIN = "androidx.navigation.safeargs.kotlin"
+  const val KOTLIN_PARCELABLE_PLUGIN = "kotlin-parcelize"
 
   const val KOTLIN_KAPT = "kotlin-kapt"
   const val KOTLIN_DOKKA = "org.jetbrains.dokka:dokka-gradle-plugin:${KOTLIN_DOKKA_VERSION}"
