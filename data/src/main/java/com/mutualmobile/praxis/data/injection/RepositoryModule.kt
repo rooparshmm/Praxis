@@ -1,7 +1,9 @@
 package com.mutualmobile.praxis.data.injection
 
 import com.mutualmobile.praxis.data.repository.LaunchListRepository
+import com.mutualmobile.praxis.data.repository.LoginRepository
 import com.mutualmobile.praxis.data.sources.launchList.ILaunchListRemoteSource
+import com.mutualmobile.praxis.data.sources.login.ILoginRemoteSource
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -18,6 +20,13 @@ object RepositoryModule {
   @JvmStatic
   fun provideLaunchListRepository(networkSource: ILaunchListRemoteSource): LaunchListRepository {
     return LaunchListRepository(networkSource)
+  }
+
+  @Provides
+  @Singleton
+  @JvmStatic
+  fun provideLoginRepository(networkSource: ILoginRemoteSource): LoginRepository {
+    return LoginRepository(networkSource)
   }
 
 }

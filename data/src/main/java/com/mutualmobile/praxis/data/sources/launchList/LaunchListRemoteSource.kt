@@ -10,13 +10,12 @@ import kotlinx.coroutines.Dispatchers
 
 class LaunchListRemoteSource(
   private val apolloClient: ApolloClient,
-  private val launchListQuery: LaunchListQuery,
   private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ILaunchListRemoteSource {
 
   override suspend fun queryLaunchList(): SafeResult<Data> {
     return safeApiCall(
-        dispatcher, apolloClient.query(launchListQuery)
+        dispatcher, apolloClient.query(LaunchListQuery())
     )
   }
 }
