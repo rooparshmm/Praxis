@@ -6,14 +6,14 @@ import androidx.lifecycle.viewModelScope
 import com.mutualmobile.praxis.data.SafeResult
 import com.mutualmobile.praxis.domain.model.toUiModel
 import com.mutualmobile.praxis.domain.usecases.QueryLaunchListUseCase
-import com.mutualmobile.praxis.ui.base.BaseViewModel
+import com.mutualmobile.praxis.ui.base.BaseVM
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
-class HomeViewModel @Inject constructor(
+class HomeVM @Inject constructor(
   private val queryLaunchListUseCase: QueryLaunchListUseCase
-) : BaseViewModel() {
+) : BaseVM() {
 
   private var _viewState: MutableLiveData<HomeViewState> = MutableLiveData()
   val viewState: LiveData<HomeViewState> = _viewState
