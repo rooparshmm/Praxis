@@ -47,6 +47,7 @@ dependencies {
   /* Networking */
   api(Lib.Networking.APOLLO)
   api(Lib.Networking.APOLLO_COROUTINES)
+  api(Lib.Networking.LOGGING)
 
   /* Dependency Injection */
   api(Lib.Di.DAGGER)

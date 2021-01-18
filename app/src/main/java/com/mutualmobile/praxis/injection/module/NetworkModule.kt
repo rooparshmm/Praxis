@@ -5,6 +5,7 @@ import com.mutualmobile.praxis.AppConstants
 import com.mutualmobile.praxis.data.remote.ApolloHelper
 import dagger.Module
 import dagger.Provides
+import okhttp3.OkHttpClient
 import javax.inject.Singleton
 
 /**
@@ -13,9 +14,15 @@ import javax.inject.Singleton
 
 @Module
 object NetworkModule {
+
   @Provides
   @Singleton
   @JvmStatic
-  fun provideApollo(): ApolloClient = ApolloHelper.createApolloClient(AppConstants.GRAPH_QL_URL)
+  fun provideHttpClient(): OkHttpClient = ApolloHelper.createOkHttpClient()
+
+  @Provides
+  @Singleton
+  @JvmStatic
+  fun provideApollo(okHttpClient: OkHttpClient): ApolloClient = ApolloHelper.createApolloClient(AppConstants.GRAPH_QL_URL, okHttpClient)
 
 }
