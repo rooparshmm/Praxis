@@ -12,5 +12,5 @@ data class Launch(
 ) : Parcelable
 
 fun Launch.toUiModel() = with(this) {
-  Launch(typeName = __typename(), id = id(), site = site())
+  Launch(typeName = __typename, id = id, site = site)
 }

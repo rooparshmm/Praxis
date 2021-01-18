@@ -24,9 +24,9 @@ class HomeVM @Inject constructor(
       when (val result = queryLaunchListUseCase.perform()) {
         is SafeResult.Success -> {
           _viewState.value = HomeViewState.ShowLaunch(
-              result.data.launches()
-                  .launches()
-                  .map { launch -> launch.toUiModel() })
+              result.data.launches
+                  .launches
+                  .mapNotNull { launch -> launch?.toUiModel() })
         }
         is SafeResult.Failure -> {
           Timber.e("onError")
