@@ -4,6 +4,7 @@ object BuildPlugins {
   private const val TOOLS_BUILD = "4.0.0"
   private const val KT_LINT = "9.2.1"
   private const val SAFE_ARGS = "2.3.0"
+  private const val APOLLO = "2.5.2"
 
   const val TOOLS_BUILD_GRADLE =
     "com.android.tools.build:gradle:${TOOLS_BUILD}"
@@ -17,6 +18,8 @@ object BuildPlugins {
   const val KOTLIN_PARCELABLE_PLUGIN = "kotlin-parcelize"
   const val KOTLIN_KAPT = "kotlin-kapt"
   const val SAFE_ARGS_PLUGIN = "androidx.navigation.safeargs.kotlin"
+  const val APOLLO_GRADLE_PLUGIN = "com.apollographql.apollo:apollo-gradle-plugin:${APOLLO}"
+  const val APOLLO_PLUGIN = "com.apollographql.apollo"
 }
 
 object Lib {
@@ -70,12 +73,17 @@ object Lib {
 
   object Networking {
     private const val RETROFIT_VERSION = "2.9.0"
+    private const val APOLLO_VERSION = "2.5.2"
     private const val OKHTTP_LOGGING = "4.7.2"
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
     const val RETROFIT_GSON =
       "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}"
     const val LOGGING =
       "com.squareup.okhttp3:logging-interceptor:${OKHTTP_LOGGING}"
+
+    const val APOLLO = "com.apollographql.apollo:apollo-runtime:${APOLLO_VERSION}"
+    const val APOLLO_COROUTINES = "com.apollographql.apollo:apollo-coroutines-support:${APOLLO_VERSION}"
+
   }
 
   object Serialization {

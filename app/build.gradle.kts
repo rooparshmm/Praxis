@@ -89,9 +89,6 @@ dependencies {
   kapt(Lib.Database.ROOM_DATABASE_COMPILER)
 
   /* Networking */
-  api(Lib.Networking.RETROFIT)
-  api(Lib.Networking.RETROFIT_GSON)
-  api(Lib.Networking.LOGGING)
   implementation("com.google.code.gson:gson:2.8.6")
   implementation("com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar")
 

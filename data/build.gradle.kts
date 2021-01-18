@@ -1,8 +1,8 @@
 plugins {
   id(BuildPlugins.ANDROID_LIBRARY_PLUGIN)
   id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
-  id(BuildPlugins.KOTLIN_PARCELABLE_PLUGIN)
   id(BuildPlugins.KOTLIN_KAPT)
+  id(BuildPlugins.APOLLO_PLUGIN)
 }
 
 android {
@@ -32,11 +32,8 @@ dependencies {
   api(Lib.Async.COROUTINES)
 
   /* Networking */
-  api(Lib.Networking.RETROFIT)
-  api(Lib.Networking.RETROFIT_GSON)
-  api(Lib.Networking.LOGGING)
-
-  api(Lib.Serialization.GSON)
+  api(Lib.Networking.APOLLO)
+  api(Lib.Networking.APOLLO_COROUTINES)
 
   /* Dependency Injection */
   api(Lib.Di.DAGGER)

@@ -22,3 +22,14 @@ This project can be used as a template for new apps.
 This project is continually evolving to integrate other libraries and techniques to keep it up to date.
 
 
+ For Using GraphQL
+ - ext.apolloVersion = '2.5.2'
+ - classpath("com.apollographql.apollo:apollo-gradle-plugin:$apolloVersion")  -> In app build.gradle
+ - apply plugin: "com.apollographql.apollo"
+ - // Apollo Graphql
+  implementation "com.apollographql.apollo:apollo-runtime:$apolloVersion"
+  implementation "com.apollographql.apollo:apollo-coroutines-support:$apolloVersion"
+
+  For downloading schema
+  gradle  downloadApolloSchema --endpoint="https://apollo-fullstack-tutorial.herokuapp.com/graphql"  --schema="networkmodule/src/main/graphql/com/mutualmobile/praxis/schema.json"
+

@@ -1,8 +1,9 @@
 package com.mutualmobile.praxis.data.injection
 
-import com.mutualmobile.praxis.data.remote.JokeApiService
-import com.mutualmobile.praxis.data.sources.IJokesRemoteSource
-import com.mutualmobile.praxis.data.sources.JokesRemoteSource
+import com.apollographql.apollo.ApolloClient
+import com.mutualmobile.praxis.LaunchListQuery
+import com.mutualmobile.praxis.data.sources.launchList.ILaunchListRemoteSource
+import com.mutualmobile.praxis.data.sources.launchList.LaunchListRemoteSource
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -17,9 +18,17 @@ object SourcesModule {
   @Provides
   @Singleton
   @JvmStatic
-  fun provideJokesNetworkSource(apiService: JokeApiService): IJokesRemoteSource {
-    return JokesRemoteSource(
-        apiService
+  fun provideLaunchListQuery() = LaunchListQuery()
+
+  @Provides
+  @Singleton
+  @JvmStatic
+  fun provideLaunchListSource(
+    apolloClient: ApolloClient,
+    apoListQuery: LaunchListQuery
+  ): ILaunchListRemoteSource {
+    return LaunchListRemoteSource(
+        apolloClient, apoListQuery
     )
   }
 

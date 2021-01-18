@@ -2,8 +2,8 @@ package com.mutualmobile.praxis.ui.joke
 
 import android.os.Bundle
 import com.mutualmobile.praxis.R
-import com.mutualmobile.praxis.data.remote.model.Joke
 import com.mutualmobile.praxis.databinding.ActivityShowjokeBinding
+import com.mutualmobile.praxis.domain.model.Launch
 import com.mutualmobile.praxis.ui.base.ActivityNavigator
 import com.mutualmobile.praxis.ui.base.BaseActivity
 
@@ -21,7 +21,7 @@ class ShowJokeActivity : BaseActivity<ActivityShowjokeBinding, ShowJokeViewModel
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    val jokeList = intent.getParcelableArrayListExtra<Joke>(JOKE_LIST_INTENT)
+    val jokeList = intent.getParcelableArrayListExtra<Launch>(JOKE_LIST_INTENT) as ArrayList<Launch>
     binding.lifecycleOwner = this
     viewModel.showJoke(jokeList)
     initToolbar()

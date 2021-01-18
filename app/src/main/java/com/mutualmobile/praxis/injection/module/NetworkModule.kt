@@ -1,12 +1,10 @@
 package com.mutualmobile.praxis.injection.module
 
+import com.apollographql.apollo.ApolloClient
 import com.mutualmobile.praxis.AppConstants
-import com.mutualmobile.praxis.data.remote.JokeApiService
-import com.mutualmobile.praxis.data.remote.RetrofitHelper
+import com.mutualmobile.praxis.data.remote.ApolloHelper
 import dagger.Module
 import dagger.Provides
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
 import javax.inject.Singleton
 
 /**
@@ -15,28 +13,9 @@ import javax.inject.Singleton
 
 @Module
 object NetworkModule {
-
   @Provides
   @Singleton
   @JvmStatic
-  fun provideHttpClient(): OkHttpClient {
-    return RetrofitHelper.createOkHttpClient()
-  }
-
-  @Provides
-  @Singleton
-  @JvmStatic
-  fun provideRetrofit(
-    okHttpClient: OkHttpClient
-  ): Retrofit {
-    return RetrofitHelper.createRetrofitClient(okHttpClient, AppConstants.BASE_URL)
-  }
-
-  @Provides
-  @Singleton
-  @JvmStatic
-  fun provideJokesApiService(retrofit: Retrofit): JokeApiService {
-    return JokeApiService.createRetrofitService(retrofit)
-  }
+  fun provideApollo(): ApolloClient = ApolloHelper.createApolloClient(AppConstants.GRAPH_QL_URL)
 
 }

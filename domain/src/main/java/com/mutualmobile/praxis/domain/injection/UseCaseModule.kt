@@ -1,7 +1,7 @@
 package com.mutualmobile.praxis.domain.injection
 
-import com.mutualmobile.praxis.data.repository.JokesRepository
-import com.mutualmobile.praxis.domain.usecases.GetFiveRandomJokesUseCase
+import com.mutualmobile.praxis.data.repository.LaunchListRepository
+import com.mutualmobile.praxis.domain.usecases.QueryLaunchListUseCase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -16,8 +16,8 @@ object UseCaseModule {
   @Provides
   @Singleton
   @JvmStatic
-  fun provideGetFiveRandomJokes(repository: JokesRepository): GetFiveRandomJokesUseCase {
-    return GetFiveRandomJokesUseCase(repository)
+  fun provideQueryLaunchList(repository: LaunchListRepository): QueryLaunchListUseCase {
+    return QueryLaunchListUseCase(repository)
   }
 
 }
