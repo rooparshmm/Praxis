@@ -14,8 +14,8 @@ import com.mutualmobile.praxis.ui.home.HomeViewState.ShowLaunch
 import com.mutualmobile.praxis.ui.home.about.AboutFragment
 import com.mutualmobile.praxis.ui.joke.ShowJokeActivity
 
-class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
-  override fun getViewModelClass(): Class<HomeViewModel> = HomeViewModel::class.java
+class HomeActivity : BaseActivity<ActivityHomeBinding, HomeVM>() {
+  override fun getViewModelClass(): Class<HomeVM> = HomeVM::class.java
 
   override fun layoutId(): Int = R.layout.activity_home
 
